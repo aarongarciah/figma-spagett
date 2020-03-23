@@ -5,13 +5,13 @@ function nodeHasSpagettFill(node: SceneNode, imageHash: Image['hash']): boolean 
     return false;
   }
 
-  return node.fills.some(x => x.imageHash === imageHash);
+  return node.fills.some((x) => x.imageHash === imageHash);
 }
 
 function sortFills(fills: ReadonlyArray<Paint>, imageHash: Image['hash']): ReadonlyArray<Paint> {
   const fillsCopy = fills.slice();
 
-  return fillsCopy.sort(x => ('imageHash' in x && x.imageHash === imageHash ? 1 : 0));
+  return fillsCopy.sort((x) => ('imageHash' in x && x.imageHash === imageHash ? 1 : 0));
 }
 
 function spagett(imageBytes: Uint8Array): void {
@@ -27,7 +27,7 @@ function spagett(imageBytes: Uint8Array): void {
 
     // If nodes ares selected add a Spagett fill to every selected node
     if (Array.isArray(nodesSelected) && nodesSelected.length > 0) {
-      nodesSelected.forEach(node => {
+      nodesSelected.forEach((node) => {
         if (!Array.isArray(node.fills)) {
           return;
         }
@@ -41,8 +41,13 @@ function spagett(imageBytes: Uint8Array): void {
     }
     // If no nodes are selected, add a Spagett image fill to every node that has an image fill
     else {
-      figma.currentPage.findAll(node => {
-        if ('fills' in node && Array.isArray(node.fills) && node.fills.length) {
+      figma.currentPage.findAll((node) => {
+        if (
+          'fills' in node &&
+          Array.isArray(node.fills) &&
+          node.fills.length &&
+          node.type !== 'FRAME'
+        ) {
           if (nodeHasSpagettFill(node, imageHash)) {
             node.fills = sortFills(node.fills, imageHash);
           } else {
@@ -61,7 +66,7 @@ function spagett(imageBytes: Uint8Array): void {
 }
 
 // Listen to messages received from the plugin UI
-figma.ui.onmessage = function({ type, payload }: UIAction): void {
+figma.ui.onmessage = function ({ type, payload }: UIAction): void {
   switch (type) {
     case UIActionTypes.NOTIFY:
       payload && figma.notify(payload);

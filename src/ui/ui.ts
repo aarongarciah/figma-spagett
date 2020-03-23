@@ -2,8 +2,21 @@ import { UIActionTypes, UIAction } from '../types';
 
 import './ui.css';
 
+const imageUrls = ['https://i.imgur.com/j6ZG1FY.jpg', 'https://i.ibb.co/k8GX9vp/spagett.jpg'];
+
 async function getImage(): Promise<Uint8Array> {
-  const response = await fetch('https://66.media.tumblr.com/tumblr_kud0t1WoXd1qzhy30o1_500.jpg');
+  let response;
+  let i = 0;
+
+  while ((!response || response.status !== 200) && i < imageUrls.length) {
+    const imageUrl = imageUrls[i];
+
+    try {
+      response = await fetch(imageUrl);
+    } catch {}
+
+    i++;
+  }
 
   if (!response || response.status !== 200) {
     throw new Error("Couldn't get the video cover image. Is the video URL correct?");
@@ -21,7 +34,7 @@ function postMessage({ type, payload }: UIAction): void {
 
 // Close the plugin if pressing Esc key when the input is not focused
 function closeWithEscapeKey(): void {
-  document.addEventListener('keydown', function(event: KeyboardEvent) {
+  document.addEventListener('keydown', function (event: KeyboardEvent) {
     try {
       if (event.code.toString().toLowerCase() === 'escape') {
         postMessage({ type: UIActionTypes.CLOSE });
@@ -34,7 +47,7 @@ function closeWithEscapeKey(): void {
 
 // Attach event listeners
 function buttonListeners(): void {
-  document.addEventListener('click', async function(event: MouseEvent) {
+  document.addEventListener('click', async function (event: MouseEvent) {
     const target = event.target as HTMLElement;
 
     if (target.id === 'spagettBtn') {
