@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "figma-plugin-typescript-boilerplate",
+  "name": "figma-spagett",
   "version": "1.0.0",
   "description": "Figma plugin TypeScript boilerplate to start developing right away.",
   "scripts": {
@@ -29,9 +29,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aarongarciah/figma-plugin-typescript-boilerplate"
+    "url": "https://github.com/aarongarciah/figma-spagett"
   },
-  "homepage": "https://github.com/aarongarciah/figma-plugin-typescript-boilerplate#readme",
+  "homepage": "https://github.com/aarongarciah/figma-spagett#readme",
   "devDependencies": {
     "@types/figma": "^1.0.2",
     "@types/jest": "^25.1.2",
