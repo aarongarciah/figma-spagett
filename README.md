@@ -4,7 +4,7 @@
 
 Figma plugin to spook your fellow designers.
 
-![Figma Video Cover Artwork](.github/images/cover.png)
+![Figma Video Cover Artwork](.github/cover.png)
 
 ## Development
 
