@@ -2,7 +2,7 @@
 
 [![Actions Status](https://github.com/aarongarciah/figma-spagett/workflows/CI/badge.svg)](https://github.com/aarongarciah/figma-spagett/actions)
 
-Figma plugin to spook your fellow designers.
+Figma plugin to make your designs spooky. [Get it!](https://www.figma.com/community/plugin/824061077635063809/Spagett!)
 
 ![Figma Video Cover Artwork](.github/cover.jpg)
 
