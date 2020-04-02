@@ -2,21 +2,9 @@
 
 [![Actions Status](https://github.com/aarongarciah/figma-spagett/workflows/CI/badge.svg)](https://github.com/aarongarciah/figma-spagett/actions)
 
-Figma plugin to make your designs spooky. [Get it!](https://www.figma.com/community/plugin/824061077635063809/Spagett!)
-
 ![Figma Video Cover Artwork](.github/cover.jpg)
 
-## Development
-
-To develop a Figma plugin you need to install the desktop app. Learn more in the [Figma Plugin docs](https://www.figma.com/plugin-docs/setup/).
-
-Available commands:
-
-- `npm run dev`: starts the watcher for changes. Modify the files under the `src` folder and the code will be compiled automatically. Then, go to the Figma app and run your development plugin.
-- `npm run build`: generates the production build in the `dist` folder. Before generating the build, it checks the TypeScript code for linting errors.
-- `npm run test`: simple test that ensures that the `ui.html` and `plugin.js` files have been generated in the `dist` folder.
-- `npm run lint`: lint TypeScript code.
-- `npm run lint:fix`: lint and apply automatic fixes to TypeScript code. This script runs before `build`.
+Figma plugin to make your designs spooky. [Get it!](https://www.figma.com/community/plugin/824061077635063809/Spagett!)
 
 ## Having problems?
 
