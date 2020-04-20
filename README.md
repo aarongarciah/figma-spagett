@@ -8,9 +8,9 @@ Figma plugin to make your designs spooky. [Get it!](https://www.figma.com/commun
 
 ## How it works
 
-When executing the plugin, there's two possible scenarios:
+When executing the plugin there's two possible scenarios:
 
-1. Some layers are selected: Spagett will be added as a fill to every layer selected.
+1. If some layers is selected: Spagett will be added as a fill to every selected layer.
 2. No layer is selected: Spagett will be added as a fill to every layer that already has a fill in the page.
 
 ## Having problems?
